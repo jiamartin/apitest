@@ -1,5 +1,6 @@
 {% load static %}
 <!doctype html>
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -10,11 +11,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title> DJANGS </title>
-   
+
     <style>
-        body{
+       body {
+        font-family: Helvetica;
         background-image: url('{% static "images/bg.jpg" %}');
-}
+        background-size: cover;
+        height: 100vh;
+        letter-spacing: 1px;
+       }
+
+
+       .navbar{
+        border-bottom: solid .5px whitesmoke;
+       }
+
+       a{
+           color: whitesmoke;
+           
+
+       }
+       a:hover{
+           color: whitesmoke;
+       }
+
     </style>
 
   </head>
@@ -22,8 +42,8 @@
   <body >
 
 
-    <nav class="navbar navbar-expand-lg navbar transparent navbar-inverse">
-        <a class="navbar-brand " href="{% url 'index' %}"> Weather </a>
+    <nav class="navbar navbar-expand-lg navbar transparent navbar-inverse p-4 mx-5">
+        <a class="navbar-brand font-weight-bold" href="{% url 'index' %}"> Weather. </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,10 +51,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-2 active">
-              <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link " href="{% url 'index' %}">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="mx-2 nav-item">
-              <a class="nav-link" href="{% url 'about' %}"> About </a>
+              <a class="nav-link" href="{% url 'about' %}"> ABOUT </a>
             </li>
 
           <form class="form-inline my-2 my-lg-0">
@@ -42,10 +62,14 @@
             <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
+      
       </nav>
 
-      <div class="container">
-   
+    
+     
+      
+      <div class="container h-100">
+     
             {% block content %}
             
             {% endblock %}
