@@ -17,6 +17,17 @@
                     <div class="column col-md-8 offset-md-2">
                         <div class="box p-5">
                             <article class="media">
+                                
+                        {% if city_weather == 'Error' %}
+                                    <div class="media-content">
+                                        <div class="content p-3">
+                                            <p>
+                                                <h1 class="title font-weight-bold"> City Not Found </h1>
+                                            </p>
+                                        </div>
+                                    </div>
+                        {% else %}
+                             
                                 <div class="media-left">
                                     <figure class="image p-4 is-200x200">
                                         <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
@@ -34,6 +45,9 @@
                                         </p>
                                     </div>
                                 </div>
+                                
+                        {% endif %}
+                
                             </article>
                         </div>
                     </div>
